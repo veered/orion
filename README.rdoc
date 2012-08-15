@@ -1,6 +1,6 @@
 = orion
 
-Description goes here.
+Observes galaxy-console and stores state changes.
 
 == Contributing to orion
  
