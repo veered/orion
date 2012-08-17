@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+$:.unshift File.join(File.dirname(__FILE__), '..', 'lib')    
+
+require 'main'
+require 'orion'
+
+Main {
+
+  option('config', 'c'){
+   description 'Load settings from a config file.' 
+   argument :optional
+  }
+
+  def after_parse_parameters
+    if params[:config].given?
+      Orion::Config.from_file(params[:config].value)
+    end
+  end
+
+  mode 'server' do
+
+    def run
+      EventMachine::run {
+        EventMachine::open_datagram_socket Orion::Config[:host], Orion::Config[:server_port], Orion::Server
+      }
+    end
+
+  end
+
+  mode 'web' do
+
+    def run
+      Orion::Web.run! :host => Orion::Config[:host], :port => Orion::Config[:web_port]
+    end
+
+  end
+
+}
