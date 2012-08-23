@@ -7,8 +7,10 @@ module Orion
 
     redis Hash.new
 
-    host '127.0.0.1'
-    server_port 8181
+    server_host 'localhost'
+    server_port 8001
+
+    web_host 'localhost'
     web_port 8000
 
   end

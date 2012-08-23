@@ -12,6 +12,7 @@ group :development do
   gem "pry"
 end
 
+gem "main"
 gem "eventmachine"
 gem "redis"
 gem "sinatra"

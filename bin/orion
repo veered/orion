@@ -21,7 +21,7 @@ Main {
 
     def run
       EventMachine::run {
-        EventMachine::open_datagram_socket Orion::Config[:host], Orion::Config[:server_port], Orion::Server
+        EventMachine::open_datagram_socket Orion::Config[:server_host], Orion::Config[:server_port], Orion::Server
       }
     end
 
@@ -30,7 +30,7 @@ Main {
   mode 'web' do
 
     def run
-      Orion::Web.run! :host => Orion::Config[:host], :port => Orion::Config[:web_port]
+      Orion::Web.run! :host => Orion::Config[:web_host], :port => Orion::Config[:web_port]
     end
 
   end

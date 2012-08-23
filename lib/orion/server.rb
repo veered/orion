@@ -17,7 +17,6 @@ module Orion
 
     def receive_data(data)
       announcements = JSON.parse(data)
-      puts announcements
 
       announcements.each do |k,v|
         add_announcement(k, v)
