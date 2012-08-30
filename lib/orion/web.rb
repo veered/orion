@@ -13,18 +13,33 @@ module Orion
 
     before do
       content_type 'application/json'
+      response['Access-Control-Allow-Origin'] = '*'
     end
 
     get '/' do
       params[:date] ||= Time.now.to_i
 
       date = params[:date].to_i
-      get_announcements(date).to_json
+      json = get_announcements(date).to_json
+
+      unless params[:callback]
+        json
+      else
+        "#{params[:callback]}(#{json});"
+      end
+
     end
 
     get '/diff' do
       params[:name] ||= ''
-      get_diffs(params[:name]).to_json
+      json = get_diffs(params[:name]).to_json
+
+      unless params[:callback]
+        json
+      else
+        "#{params[:callback]}(#{json});"
+      end
+
     end
 
     helpers do 
