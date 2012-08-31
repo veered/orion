@@ -11,12 +11,13 @@ module Orion
       @rd = Redis.new Orion::Config[:redis]
     end
 
-    before do
-      content_type 'application/json'
-      response['Access-Control-Allow-Origin'] = '*'
+    get '/' do
+      redirect '/index.html'
     end
 
-    get '/' do
+    get '/services' do
+      content_type 'application/json'
+
       params[:date] ||= Time.now.to_i
 
       date = params[:date].to_i
@@ -31,6 +32,8 @@ module Orion
     end
 
     get '/diff' do
+      content_type 'application/json'
+
       params[:name] ||= ''
       json = get_diffs(params[:name]).to_json
 
