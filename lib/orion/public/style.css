@@ -1,0 +1,79 @@
+body {
+  background-color: #E6E6E6;
+}
+
+.datetime {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #7D7D7D;
+  padding: 5px;
+  text-align: center;
+}
+
+#date, #time {
+  color: #696969;
+}
+
+#filter {
+  background: #BCBCBC;
+  color: #696969;
+  border: 0;
+}
+
+.datagrid table { 
+  border-collapse: collapse; text-align: left; width: 100%; 
+} 
+
+.datagrid {
+  font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 6px solid #8C8C8C; border-radius: 7px; 
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.datagrid table td {
+  padding: 6px 7px; 
+}
+
+.datagrid table tbody td {
+  color: #7D7D7D; border-left: 1px solid #DBDBDB;font-size: 12px;font-weight: normal; 
+}
+
+.datagrid table tbody td:first-child { 
+  border-left: none; 
+}
+
+.datagrid table .head tr td {
+  background-color: #8C8C8C; 
+  color: #FFFFFF; 
+  font-size: 12px; 
+  border-left: none;
+} 
+
+.datagrid table .head tr td:first-child {
+  font-weight: bold;  
+  font-size: 15px; 
+}
+
+.datagrid table .head tr td:first-child:hover {
+  background-color: #687487;
+}
+
+.datagrid table .list tr:nth-child(even) td {
+  background: #BCBCBC; color: #707070; 
+}
+
+.datagrid table .list tr:nth-child(odd) td {
+  background: #EBEBEB; color: #7D7D7D; 
+}
+
+.datagrid table .list tr td:first-child:hover {
+  background: #687487; color: #BCBCBC; 
+}
+
+.json_window {
+  width: 800px;
+  height: 800px;
+  overflow-y: scroll;
+}
