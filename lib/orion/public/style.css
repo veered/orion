@@ -56,7 +56,7 @@ body {
   font-size: 15px; 
 }
 
-.datagrid table .head tr td:first-child:hover {
+.datagrid table .head_highlight tr td:first-child:hover {
   background-color: #687487;
 }
 
@@ -68,12 +68,12 @@ body {
   background: #EBEBEB; color: #7D7D7D; 
 }
 
-.datagrid table .list tr td:first-child:hover {
+.datagrid table .list_highlight tr td:first-child:hover {
   background: #687487; color: #BCBCBC; 
 }
 
 .json_window {
   width: 800px;
-  height: 800px;
+  max-height: 800px;
   overflow-y: scroll;
 }
